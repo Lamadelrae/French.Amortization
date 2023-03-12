@@ -1,4 +1,4 @@
-﻿namespace French.Amortization.Api.Loan.Queries
+﻿namespace French.Amortization.Api.Loans.Queries
 {
     public class FetchLoanQueryResponse
     {

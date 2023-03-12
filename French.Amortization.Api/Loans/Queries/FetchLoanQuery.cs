@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace French.Amortization.Api.Loan.Queries
+namespace French.Amortization.Api.Loans.Queries
 {
     public class FetchLoanQuery : IRequest<FetchLoanQueryResponse>
     {

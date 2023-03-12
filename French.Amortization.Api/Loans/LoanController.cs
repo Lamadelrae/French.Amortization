@@ -1,8 +1,8 @@
-﻿using French.Amortization.Api.Loan.Queries;
+﻿using French.Amortization.Api.Loans.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace French.Amortization.Api.Loan
+namespace French.Amortization.Api.Loans
 {
     [ApiController]
     [Route("loan")]

@@ -1,6 +1,6 @@
 ﻿using French.Amortization.Api.Shared.Extensions;
 
-namespace French.Amortization.Api.Loan
+namespace French.Amortization.Api.Loans
 {
     public class Loan
     {

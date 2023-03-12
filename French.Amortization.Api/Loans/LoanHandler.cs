@@ -1,7 +1,7 @@
-﻿using French.Amortization.Api.Loan.Queries;
+﻿using French.Amortization.Api.Loans.Queries;
 using MediatR;
 
-namespace French.Amortization.Api.Loan
+namespace French.Amortization.Api.Loans
 {
     public class LoanHandler : IRequestHandler<FetchLoanQuery, FetchLoanQueryResponse>
     {
