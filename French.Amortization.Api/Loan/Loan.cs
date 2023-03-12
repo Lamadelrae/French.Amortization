@@ -10,13 +10,18 @@ namespace French.Amortization.Api.Loan
         public double MonthlyInterestRate { get; private set; }
 
         public double TotalFinancedValue => (MonthlyPaymentValue * InstallmentQuantity).ToRounded(2);
-        public double MonthlyPaymentValue => 
-            (
-                RequestedValue * 
-                (MonthlyInterestRate / 100) *
-                (Math.Pow(1 + (MonthlyInterestRate / 100), InstallmentQuantity) / (Math.Pow(1 + (MonthlyInterestRate / 100), InstallmentQuantity) - 1))
-            ).ToRounded(2);
+        public double MonthlyPaymentValue
+        {
+            get
+            {
+                var monthlyInterestRate = MonthlyInterestRate / 100;
 
+                return 
+                    RequestedValue *
+                    monthlyInterestRate *
+                    (Math.Pow(1 + monthlyInterestRate, InstallmentQuantity) / (Math.Pow(1 + monthlyInterestRate, InstallmentQuantity) - 1));
+            }
+        }
         public DateTime LastExpiration => FirstExpiration.AddMonths(InstallmentQuantity);
         public List<Installment> Installments => Installment.Generate(this);
 
