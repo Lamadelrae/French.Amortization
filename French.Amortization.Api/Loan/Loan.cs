@@ -49,7 +49,7 @@ namespace French.Amortization.Api.Loan
 
                 var expiration = loan.FirstExpiration;
                 var balance = loan.RequestedValue;
-                for (int i = 1; i <= loan.InstallmentQuantity; i++)
+                for (var i = 1; i <= loan.InstallmentQuantity; i++)
                 {
                     var interest = loan.MonthlyInterestRate / 100 * balance;
                     var principal = loan.MonthlyPaymentValue - interest;
