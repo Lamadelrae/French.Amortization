@@ -1,14 +1,14 @@
 ﻿namespace French.Amortization.Api.Loans.Queries
 {
-    public class FetchLoanQueryResponse
+    public class CreateLoanResponse
     {
         public double TotalFinancedValue { get; set; }
         public double MonthlyInterestRate { get; set; }
         public FetchLoanQueryResponseDates Dates { get; set; }
         public IEnumerable<FetchLoanQueryResponseInstallment> Installments { get; set; }
 
-        public static FetchLoanQueryResponse FromEntity(Loan loan) =>
-            new FetchLoanQueryResponse()
+        public static CreateLoanResponse FromEntity(Loan loan) =>
+            new CreateLoanResponse()
             {
                 TotalFinancedValue = loan.TotalFinancedValue,
                 MonthlyInterestRate = loan.MonthlyInterestRate,

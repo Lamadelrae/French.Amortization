@@ -2,7 +2,7 @@
 
 namespace French.Amortization.Api.Loans.Queries
 {
-    public class FetchLoanQuery : IRequest<FetchLoanQueryResponse>
+    public class CreateLoanCommand : IRequest<CreateLoanResponse>
     {
         public double RequestedValue { get; set; }
         public DateTime FirstExpiration { get; set; }

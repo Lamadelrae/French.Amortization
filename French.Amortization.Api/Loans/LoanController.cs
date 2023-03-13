@@ -15,10 +15,10 @@ namespace French.Amortization.Api.Loans
             _mediator = mediator;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> FetchLoan([FromQuery] FetchLoanQuery query)
+        [HttpPost]
+        public async Task<IActionResult> CreateLoan([FromBody] CreateLoanCommand command)
         {
-            return Ok(await _mediator.Send(query));
+            return Ok(await _mediator.Send(command));
         }
     }
 }
