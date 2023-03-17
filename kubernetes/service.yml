@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: french-amortization-api-service
+spec:
+  ports:
+    - protocol: "TCP"
+      nodePort: 80
+      port: 80        # The port inside the cluster
+      targetPort: 80  # The port exposed by the service
+  type: NodePort        # Type of service
+  selector:
+    app: french-amortization-api

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: french-amortization-api
+spec:
+  selector:
+    matchLabels:
+      app: french-amortization-api
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: french-amortization-api
+    spec:
+      containers:
+        - name: french-amortization-api
+          image: french-amortization-api:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80
