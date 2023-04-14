@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: french-amortization-api
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
@@ -14,7 +14,12 @@ spec:
     spec:
       containers:
         - name: french-amortization-api
-          image: french-amortization-api:latest
+          image: french-amortization:latest
           imagePullPolicy: Never
           ports:
             - containerPort: 80
+          resources:
+            limits:
+              cpu: 150m #absolute limit
+            requests:
+              cpu: 100m #amount guaranteed by K8S. 

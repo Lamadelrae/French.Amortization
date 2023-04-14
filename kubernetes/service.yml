@@ -5,9 +5,9 @@ metadata:
 spec:
   ports:
     - protocol: "TCP"
-      nodePort: 80
-      port: 80        # The port inside the cluster
-      targetPort: 80  # The port exposed by the service
-  type: NodePort        # Type of service
+      nodePort: 30000 # port that can be used to communicate externally with the service
+      port: 80  # port that pods can internally use to communicate
+      targetPort: 80  # the port that the service sends the request
+  type: NodePort # Type of service
   selector:
     app: french-amortization-api
