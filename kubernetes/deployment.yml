@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: french-amortization-api
-          image: french-amortization:latest
+          image: french-amortization-api:latest
           imagePullPolicy: Never
           ports:
             - containerPort: 80
