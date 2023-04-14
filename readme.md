@@ -51,7 +51,7 @@ kubectl apply -f kubernetes/hpa.yml
 
 ## ☕ Using our app
 
-To use, we must create a tunnel between minikube and the kubernetes container running on our docker:
+We must create a tunnel between minikube and the kubernetes container running on our docker desktop app:
 
 ```
 minikube service french-amortization-api-service
@@ -60,7 +60,7 @@ minikube service french-amortization-api-service
 
 ## 📄 Useful notes
 
-To test HPA here's a handful loader:
+To test HPA here's a useful loader:
 
 ```
 kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://<INTERAL POD IP HERE>/swagger/index.html; done"
